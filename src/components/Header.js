@@ -17,8 +17,7 @@ export function Header() {
     const dispatch = useDispatch()
     return (
         <div>
-            <button onClick={() => dispatch(loginTheUser())} type="button">Click Me!</button>
-            <button>{loginUI()}</button>
+            <button onClick={() => dispatch(loginTheUser())} type="button">{loginStatus? 'Wellcome Guest!!':'Login Please'}</button>
             {loginStatus && <button onClick={()=>dispatch(logoutTheUSer())}>Logout</button> }
         </div>
     )
