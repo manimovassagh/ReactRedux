@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
-import { loginTheUser } from '../Redux/Login/LoginAction'
+import { loginTheUser, logoutTheUSer } from '../Redux/Login/LoginAction'
 export function Header() {
 
     const loginStatus = useSelector(state => state.loginStatus)
@@ -19,6 +19,7 @@ export function Header() {
         <div>
             <button onClick={() => dispatch(loginTheUser())} type="button">Click Me!</button>
             <button>{loginUI()}</button>
+            {loginStatus && <button onClick={()=>dispatch(logoutTheUSer())}>Logout</button> }
         </div>
     )
 }
